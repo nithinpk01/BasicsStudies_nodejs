@@ -1,0 +1,28 @@
+<div class="contaner mt-5 ml-5" >
+<a href="/admin/add-product" class="btn btn-primary">Add New Product</a> 
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">CATEGORY</th>
+      <th scope="col">IMAGE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {{#each products}}
+      <th scope="row">1</th>
+      <td>{{this.name}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.category}}</td>
+      <td><img style="width:50px;hieght:50px" src='/product-images/{{this._id}}.jpg'</td>
+      <td>
+        <a href="/admin/edit-product/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete {{this.name}}?')">Delete</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
